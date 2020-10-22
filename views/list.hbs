@@ -1,23 +1,21 @@
-<table>
-<thead>
-    <th class="center-align">Vine name</th>
-    <th class="center-align">Vine type</th>
-    <th class="center-align">Vine country</th>
-    <th class="center-align">Vine rate</th>
-    <th class="center-align">Vine price</th>
-</thead>
+ <div class="row">
 {{#each Data}}
-<tbody>
-    <tr>
-        <td>{{vineName}}</td>
-        <td>{{vineType}}</td>
-        <td>{{vineCountry}}</td>
-        <td>{{vineRate}}</td>
-        <td>{{vinePrice}}</td>
-    </tr>
+
+    <div class="col  m12 l6 xl4">
+
+      <div class="card ">
+        <div class="card-content">
+            <img src="https://ipcdn.freshop.com/resize?url=https://images.freshop.com/00089819001712/7e8b7f41d2e14ad9686e68c688eaacf7_large.png&width=256&type=webp&quality=40">
+          <span class="card-title">{{vineName}}</span>
+         <p>{{vineType}} vine from {{vineCountry}}</p>
+          <p>Rated as {{vineRate}}</p>
+        </div>
+        <div class="card-action">
+          <p>Price: {{vinePrice}} Eur.</p>
+          
+        </div>
+      </div>
+    </div>
+  
 {{/each}}
-</tbody>
-
-
-
-</table>
+</div>

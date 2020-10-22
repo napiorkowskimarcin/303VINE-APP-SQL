@@ -1,0 +1,11 @@
+.card-title {
+  font-weight: bold !important;
+}
+
+.card-action {
+  font-weight: bold !important;
+}
+
+.card {
+  overflow: hidden;
+}
