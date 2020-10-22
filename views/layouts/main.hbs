@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY PROJECT 02 - vines</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   
+</head>
+
+<body >
+    <nav>
+    <div class="nav-wrapper teal lighten-2">
+      <a href="#" class="brand-logo right">MN</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="/">Create wine</a></li>
+        <li><a href="/list">Table</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="divider"></div>
+  <div class="container">
+
+    {{{body}}}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+    M.FormSelect.init(document.querySelector('#vineRate'))
+    M.FormSelect.init(document.querySelector('#vineCountry'))
+    M.FormSelect.init(document.querySelector('#vineType'))
+    </script>
+  
+</body>
+</html>
