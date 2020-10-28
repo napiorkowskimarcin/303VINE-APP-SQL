@@ -18,7 +18,7 @@ const vineSchema = new Schema({
   },
   vineRate: {
     type: String,
-    default: "table wivinene",
+    default: "table vine",
     enum: ["table vine", "good choice", "excelent choice"],
   },
   vinePrice: {

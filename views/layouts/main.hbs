@@ -16,6 +16,14 @@
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a href="/">Create wine</a></li>
         <li><a href="/list">Table</a></li>
+        <a class='dropdown-trigger btn' href='#' id = 'dropdown' data-target='dropdown1'>User</a>
+         <ul id='dropdown1' class='dropdown-content'>
+    <li><a href="/user/signup">signup</a></li>
+     <li class="divider" tabindex="-1"></li>
+    <li><a href="#!">else</a></li>
+   
+  
+  </ul>
       </ul>
     </div>
   </nav>
@@ -30,6 +38,7 @@
     M.FormSelect.init(document.querySelector('#vineRate'))
     M.FormSelect.init(document.querySelector('#vineCountry'))
     M.FormSelect.init(document.querySelector('#vineType'))
+    M.Dropdown.init(document.querySelector('#dropdown'))
     </script>
   
 </body>
