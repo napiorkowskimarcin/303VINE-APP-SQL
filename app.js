@@ -75,9 +75,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //routes
-app.use("/", require("./routes/index"));
 app.use("/list", require("./routes/list"));
 app.use("/user", require("./routes/user"));
+app.use("/", require("./routes/index"));
 
 //start listening
 app.listen(PORT, () => console.log(`Server has started on: ${PORT}`));

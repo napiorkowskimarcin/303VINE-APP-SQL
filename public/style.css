@@ -12,3 +12,6 @@
 .text-white {
   color: white;
 }
+.welcome {
+  list-style: none;
+}

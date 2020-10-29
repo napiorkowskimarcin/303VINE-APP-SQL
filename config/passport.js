@@ -26,7 +26,7 @@ function initialize(passport) {
   passport.use(new LocalStrategy({ usernameField: "email" }, authenticateUser));
   passport.serializeUser((user, done) => done(null, user.id));
   passport.deserializeUser((id, done) =>
-    User.findById(id, (err, user) => done(err, user))
+    User.findById(id).then((user) => done(null, user))
   );
 }
 
