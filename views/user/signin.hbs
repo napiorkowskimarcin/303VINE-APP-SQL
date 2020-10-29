@@ -3,14 +3,15 @@
   color: white;
 }
 </style>
+
 <div class="row">
 <div class=" card col  m12 l6 xl4">
 
-    <h1>Sign Up </h1>
+    <h1>Sign In </h1>
     {{#if messages.error}}
           {{messages.error}}
        {{/if}}
-    <form action="/user/signup" method='post' autocomplete="off">
+    <form action="/user/signin" method='post' autocomplete="off">
 <div class="form-group">
 <label for="email">E-Mail</label>
 <input type="text" id="email" name="email" >
@@ -21,10 +22,10 @@
 <input type="password" id="password" name="password" >
 </div>
 <p></p>
-<button type="submit" class="waves-effect waves-light btn ">Sign Up</button>
+<button type="submit" class="waves-effect waves-light btn ">Sign In</button>
 <p></p>
     </form>
-    <button class="waves-effect waves-light btn text-white"><a  class="text-white" href="/user/signin">log to your account</a></button>
+    <button class="waves-effect waves-light btn text-white"><a class="text-white" href="/user/signup">create account</a></button>
    <p></p>
 </div>
 

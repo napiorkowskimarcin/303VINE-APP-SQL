@@ -4,14 +4,17 @@ const exphbs = require("express-handlebars");
 const morgan = require("morgan");
 const config = require("./config/config");
 const bodyParser = require("body-parser");
+const path = require("path");
+
+//flash and session for passport
+const flash = require("express-flash");
+const session = require("express-session");
 
 //for view engine
 const Handlebars = require("handlebars");
 
 //to be able to use put and delete later on
 const methodOverride = require("method-override");
-//for csrf token
-const session = require("express-session");
 
 //set a port
 const PORT = process.env.PORT || 3000;
@@ -19,6 +22,7 @@ const PORT = process.env.PORT || 3000;
 const {
   allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access");
+const passport = require("passport");
 
 //load mongoose
 mongoose.connect(config.db, {
@@ -36,7 +40,7 @@ db.once("open", function () {
 //set app and public files for javascript
 
 const app = express();
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 //method override for put and delete
 app.use(methodOverride("_method"));
@@ -64,10 +68,16 @@ app.set("view engine", ".hbs");
 //login data
 app.use(morgan("dev"));
 
+//passport! set resave and saveuninitialized to false. secret should have been placed in seperate file
+app.use(flash());
+app.use(session({ secret: "asasa", resave: false, saveUninitialized: false }));
+app.use(passport.initialize());
+app.use(passport.session());
+
 //routes
 app.use("/", require("./routes/index"));
 app.use("/list", require("./routes/list"));
-app.use("/user/signup", require("./routes/user"));
+app.use("/user", require("./routes/user"));
 
 //start listening
 app.listen(PORT, () => console.log(`Server has started on: ${PORT}`));
