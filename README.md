@@ -14,3 +14,9 @@
 - morgan to log out requests
 - body-Parser to get body of request straight to json
 - express session - to make sign up/in with passport local possible
+
+### Done yet:
+
+- add vines to the mongoDb
+- find all of the vines and store them inside a lists of cards
+- create signup and signin
