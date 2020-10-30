@@ -73,6 +73,11 @@ app.use(flash());
 app.use(session({ secret: "asasa", resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
+//to have acces to account on all of the views.
+app.use((req, res, next) => {
+  res.locals.login = req.isAuthenticated();
+  next();
+});
 
 //routes
 app.use("/list", require("./routes/list"));
