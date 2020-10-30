@@ -19,4 +19,5 @@
 
 - add vines to the mongoDb
 - find all of the vines and store them inside a lists of cards
-- create signup and signin
+- create signup and signin //passport-local with bcrypt
+- create user profiles, logout
