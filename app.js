@@ -10,6 +10,9 @@ const path = require("path");
 const flash = require("express-flash");
 const session = require("express-session");
 
+//session for shopping cart
+const MongoStore = require("connect-mongo")(session);
+
 //for view engine
 const Handlebars = require("handlebars");
 
@@ -47,7 +50,13 @@ app.use(methodOverride("_method"));
 
 //session - to make passport-local possible
 app.use(
-  session({ secret: "sessionsecret", resave: false, saveUninitialized: false })
+  session({
+    secret: "sessionsecret",
+    resave: false,
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    cookie: { maxAge: 120 * 60 * 1000 },
+  })
 );
 
 //allow bodyParser to recognize a body
@@ -73,9 +82,12 @@ app.use(flash());
 app.use(session({ secret: "asasa", resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
+
 //to have acces to account on all of the views.
 app.use((req, res, next) => {
   res.locals.login = req.isAuthenticated();
+  res.locals.user = req.user;
+  res.locals.session = req.session;
   next();
 });
 

@@ -1,5 +1,7 @@
 # 302VINE-APP
 
+### log with w@w and password w
+
 ## VINE - APP PROJECT - aim is to prepare a simple shop with users.
 
 ### Using:
@@ -21,3 +23,4 @@
 - find all of the vines and store them inside a lists of cards
 - create signup and signin //passport-local with bcrypt
 - create user profiles, logout
+- add sessions for store

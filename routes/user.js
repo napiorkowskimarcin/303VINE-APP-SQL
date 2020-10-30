@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
+const { model } = require("mongoose");
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
 const passport = require("passport");
+const Vine = require("../models/Vine");
 
 //passport - initialize
 const initializePassport = require("../config/passport");
