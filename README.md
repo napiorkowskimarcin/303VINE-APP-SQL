@@ -2,6 +2,8 @@
 
 ### log with w@w and password w
 
+### progess to see and play: https://vine-app-mn.herokuapp.com/list
+
 ## VINE - APP PROJECT - aim is to prepare a simple shop with users.
 
 ### Using:
