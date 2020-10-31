@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
 
 router.get("/add/:id", (req, res) => {
   const productId = req.params.id;
-  let items;
+
   const cart = new Cart(req.session.cart ? req.session.cart : { items: {} });
   Vine.findById(productId, function (err, product) {
     if (err) {
