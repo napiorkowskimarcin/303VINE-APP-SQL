@@ -1,22 +1,10 @@
-module.exports = function Cart(oldCart) {
-  this.items = oldCart.items;
-  this.totalQty = oldCart.totalQty;
-  this.totalPrice = oldCart.totalPrice;
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
+const cartSchema = new Schema({
+  inputEmail: { type: String },
+  inputNames: { type: String },
+  inputQty: { type: String },
+  inputSum: { type: String },
+});
 
-  this.add = function (item, id) {
-    let storedItem = this.items[id];
-    if (!storedItem) {
-      storedItem = this.items[id] = { item: item, qty: 0, price: 0 };
-    }
-    storedItem.qty++;
-    storedItem.price = storedItem.item.price * storedItem.qty;
-    this.totalQty++;
-    this.totalPrice += storedItem.price;
-  };
-  this.generateArray = function () {
-    const arr = [];
-    for (let i in this.items) {
-      arr.push(this.items[id]);
-    }
-  };
-};
+module.exports = mongoose.model("Cart", cartSchema);

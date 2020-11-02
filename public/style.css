@@ -15,3 +15,7 @@
 .welcome {
   list-style: none;
 }
+
+.none {
+  display: none;
+}

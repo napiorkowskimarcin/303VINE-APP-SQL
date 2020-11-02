@@ -18,6 +18,7 @@ router.post("/", (req, res) => {
   new Vine(data).save();
   res.render("succes", {
     layout: "main",
+    message: "You added a new product",
     data,
   });
 });

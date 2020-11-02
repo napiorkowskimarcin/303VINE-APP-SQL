@@ -54,8 +54,6 @@ app.use(
     secret: "sessionsecret",
     resave: false,
     saveUninitialized: false,
-    store: new MongoStore({ mongooseConnection: mongoose.connection }),
-    cookie: { maxAge: 120 * 60 * 1000 },
   })
 );
 
@@ -63,15 +61,15 @@ app.use(
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//load handlebars and set .handlebars to .hbs
-app.engine(
-  ".hbs",
-  exphbs({
-    defaultLayout: "main",
-    extname: ".hbs",
-    handlebars: allowInsecurePrototypeAccess(Handlebars),
-  })
-);
+//load handlebars and set .handlebars to .hbs + helpers
+const hbs = exphbs.create({
+  defaultLayout: "main",
+  extname: ".hbs",
+  handlebars: allowInsecurePrototypeAccess(Handlebars),
+  //create helper
+  helpers: {},
+});
+app.engine(".hbs", hbs.engine);
 app.set("view engine", ".hbs");
 
 //login data
@@ -92,6 +90,7 @@ app.use((req, res, next) => {
 });
 
 //routes
+app.use("/order", require("./routes/order"));
 app.use("/list", require("./routes/list"));
 app.use("/user", require("./routes/user"));
 app.use("/", require("./routes/index"));
