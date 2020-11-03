@@ -1,9 +1,10 @@
  <div class="row">
 
    {{#if user}}
+   <div class="card shoppingCart">
    <form action="/list/buy" method="POST">
    <div class="shoppingContainer">
-     <p>User: <span class="user">{{user.email}}</span> shopping list:</p>
+     <h6>User: <span class="user ">{{user.email}}</span> shopping list:</h6>
      
    </div>
    <div class="total"></div>
@@ -11,11 +12,12 @@
   <input type="hidden" name="inputNames" class="inputNames">
   <input type="hidden" name="inputQty" class="inputQty">
   <input type="hidden" name="inputSum" class="inputSum">
-   <button type="submit" id="buy" class="none">Buy!</button>
+   <button type="submit" id="buy" class="none btn btn-succes waves-effect waves-light teal lighten-2  white-text">Buy!</button>
    
  </div>
+ </div>
  </form>
- {{/if}}
+ 
 
   
 
@@ -42,4 +44,33 @@
   
 {{/each}}
 </div>
+{{else}}
+
+ <div class="row">
+{{#each Data}}
+
+    <div class="col  m12 l6 xl4">
+
+      <div class="card ">
+        <div class="card-content">
+            <img src="https://ipcdn.freshop.com/resize?url=https://images.freshop.com/00089819001712/7e8b7f41d2e14ad9686e68c688eaacf7_large.png&width=256&type=webp&quality=40">
+          <span class="card-title">{{vineName}}</span>
+         <p>{{vineType}} vine from {{vineCountry}}</p>
+          <p>Rated as {{vineRate}}</p>
+        </div>
+        <div class="card-action">
+          <p>Price: <span class = 'card-price'>{{vinePrice}} </span> Eur.
+          
+           
+        </div>
+      </div>
+    </div>
+  
+{{/each}}
+</div>
+
+
+
+
+{{/if}}
 <script src="cart.js"></script>

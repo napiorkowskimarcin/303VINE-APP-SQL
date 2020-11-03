@@ -19,3 +19,10 @@
 .none {
   display: none;
 }
+
+.shoppingCart {
+  position: fixed;
+  top: 70px;
+  left: 20px;
+  padding: 10px;
+}

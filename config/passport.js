@@ -10,7 +10,7 @@ function initialize(passport) {
     console.log(user);
     if (!user) {
       return done(null, false, {
-        message: "no user with that email- please create an accout",
+        message: "no user with that name- please create an accout",
       });
     }
     try {

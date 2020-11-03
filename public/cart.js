@@ -36,10 +36,8 @@ for (let i = 0; i < btnBuy.length; i++) {
     sampleArray = [];
     for (let i = 0; i < productNames.length; i++) {
       sampleArray.push(
-        "Product name: " +
-          productNames[i] +
-          "Quantity of the product:" +
-          productQty[i]
+        `P: ${productNames[i]} Qty: ${productQty[i]} 
+         `
       );
     }
 
