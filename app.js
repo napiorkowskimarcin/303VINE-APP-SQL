@@ -3,6 +3,7 @@ const exphbs = require("express-handlebars");
 const morgan = require("morgan");
 const config = require("./config/config");
 const bodyParser = require("body-parser");
+const pool = require("./config/config");
 const path = require("path");
 
 //flash and session for passport

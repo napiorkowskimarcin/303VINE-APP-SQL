@@ -1,9 +1,11 @@
 const express = require("express");
+const pool = require("../config/config");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const Data = await Vine.find().lean();
+    const Data = await pool.query("SELECT * FROM product");
+    console.log(Data);
     res.render("list", {
       layout: "main",
       Data,
