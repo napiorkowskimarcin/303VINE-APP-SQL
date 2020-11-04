@@ -1,7 +1,7 @@
 {
-  "name": "16myproject-wines",
+  "name": "22myproject-wines-sql",
   "version": "1.0.0",
-  "description": "wines - samle project",
+  "description": "wines ",
   "main": "app.js",
   "scripts": {
     "start": "node app"
