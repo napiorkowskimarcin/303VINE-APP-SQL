@@ -4,7 +4,9 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const Data = await pool.query("SELECT * FROM product");
+    const DataSQL = await pool.query("SELECT * FROM product");
+    const Data = DataSQL.rows;
+
     console.log(Data);
     res.render("list", {
       layout: "main",
