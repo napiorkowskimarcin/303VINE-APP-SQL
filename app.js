@@ -1,5 +1,4 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const exphbs = require("express-handlebars");
 const morgan = require("morgan");
 const config = require("./config/config");
@@ -9,9 +8,6 @@ const path = require("path");
 //flash and session for passport
 const flash = require("express-flash");
 const session = require("express-session");
-
-//session for shopping cart
-const MongoStore = require("connect-mongo")(session);
 
 //for view engine
 const Handlebars = require("handlebars");
@@ -26,19 +22,6 @@ const {
   allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access");
 const passport = require("passport");
-
-//load mongoose
-mongoose.connect(config.db, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-});
-//set a DB connection
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", function () {
-  console.log("Connected to the database");
-});
 
 //set app and public files for javascript
 

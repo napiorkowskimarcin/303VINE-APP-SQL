@@ -1,7 +1,5 @@
 const express = require("express");
-const { model } = require("mongoose");
 const router = express.Router();
-const Vine = require("../models/Vine");
 
 router.get("/", (req, res) => {
   try {
