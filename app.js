@@ -68,7 +68,10 @@ app.use(passport.session());
 //to have acces to account on all of the views.
 app.use((req, res, next) => {
   res.locals.login = req.isAuthenticated();
-  res.locals.user = req.user;
+  if (res.locals.login) {
+    res.locals.user = req.user.rows[0].us_name || 0;
+  }
+
   res.locals.session = req.session;
   next();
 });

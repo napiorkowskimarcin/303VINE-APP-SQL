@@ -1,9 +1,11 @@
 const express = require("express");
+const pool = require("../config/config");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const Data = await Cart.find().lean();
+    const DataSQL = await pool.query("SELECT * FROM vine_orders");
+    const Data = DataSQL.rows;
     console.log(Data);
     res.render("order", {
       layout: "main",

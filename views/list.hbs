@@ -4,7 +4,7 @@
    <div class="card shoppingCart">
    <form action="/list/buy" method="POST">
    <div class="shoppingContainer">
-     <h6>User: <span class="user ">{{user.email}}</span> shopping list:</h6>
+     <h6>User: <span class="user ">{{user}}</span> shopping list:</h6>
      
    </div>
    <div class="total"></div>
@@ -30,7 +30,7 @@
         <div class="card-content">
             <img src="https://ipcdn.freshop.com/resize?url=https://images.freshop.com/00089819001712/7e8b7f41d2e14ad9686e68c688eaacf7_large.png&width=256&type=webp&quality=40">
           <span class="card-title">{{vinename}}</span>
-         <p>{{vinetype}} vine from {{vineCountry}}</p>
+         <p>{{vinetype}} vine from {{vinecountry}}</p>
           <p>Rated as {{vinerate}}</p>
         </div>
         <div class="card-action">
@@ -55,7 +55,7 @@
         <div class="card-content">
             <img src="https://ipcdn.freshop.com/resize?url=https://images.freshop.com/00089819001712/7e8b7f41d2e14ad9686e68c688eaacf7_large.png&width=256&type=webp&quality=40">
           <span class="card-title">{{vinename}}</span>
-         <p>{{vinetype}} vine from {{vineCountry}}</p>
+         <p>{{vinetype}} vine from {{vinecountry}}</p>
           <p>Rated as {{vinerate}}</p>
         </div>
         <div class="card-action">
